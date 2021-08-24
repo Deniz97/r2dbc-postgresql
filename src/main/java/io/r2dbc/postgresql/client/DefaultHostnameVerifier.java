@@ -100,7 +100,7 @@ public enum DefaultHostnameVerifier implements HostnameVerifier {
     public boolean verify(String hostname, SSLSession session) {
         X509Certificate[] peerCerts;
         try {
-            peerCerts = (X509Certificate[]) session.getPeerCertificates();
+            peerCerts = (X509Certificate[]) session.getPeerCertificates(); // TODO HERE
         } catch (SSLPeerUnverifiedException e) {
             this.logger.warn("Unable to parse X509Certificate for hostname {}", hostname, e);
             return false;
